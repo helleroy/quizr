@@ -1,7 +1,5 @@
 package quizr.domain;
 
-import quizr.dto.AnswerDTO;
-
 import java.util.*;
 
 public class Quiz {
@@ -24,8 +22,8 @@ public class Quiz {
         }
     }
 
-    public Participant addParticipant(UUID uuid) {
-        return participants.getOrDefault(uuid, new Participant());
+    public Participant addParticipant(UUID uuid, String name) {
+        return participants.getOrDefault(uuid, new Participant(name));
     }
 
     public Optional<Question> nextQuestion() {
